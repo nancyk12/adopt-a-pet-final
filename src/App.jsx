@@ -9,10 +9,11 @@ import NavBar from "./components/NavBar";
 //import Form from "./components/Form";
 import Cards from "./components/Cards";
 import Home from "./pages/Home";
-
 import About from "./pages/About";
-import Pets from "./pages/Pets";
-import PetDetail from "./pages/PetDetail";
+import Pets from "./pages/Pets/Pets";
+import PetDetail from "./pages/Pets/PetDetail";
+import Layout from "./components/Layout"
+
 //import Login from "./components/Login";
 
 
@@ -21,22 +22,18 @@ import PetDetail from "./pages/PetDetail";
 function App() {
 
   return (
-	<BrowserRouter dir="rtl">
-	   <header>
-		 <Link className="site-logo" to="/">#Adopt-A-Pet</Link>
-		 <nav>
-		   <Link to="/">  Home  </Link>
-		   <Link to="/about">  About  </Link>
-		   <Link to="/pets">  Pets  </Link>
-		 </nav> 
-	   </header>
-        <Routes>
-           <Route path="/" element={<Home/>}/>
-           <Route path="/about" element={<About/>}/>
-		   <Route path="/pets" element={<Pets/>}/>
-		   <Route path="/pets/:id/" element={<PetDetail/>}/>
-        </Routes>
-	</BrowserRouter> 
+	<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="pets" element={<Pets />} />
+          <Route path="pets/:id" element={<PetDetail />} />
+          
+          
+        </Route>
+      </Routes>
+    </BrowserRouter>
 	)		
 			
 }

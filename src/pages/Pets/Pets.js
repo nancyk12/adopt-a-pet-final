@@ -5,8 +5,8 @@ import { Link,useSearchParams,
     defer,
     Await } from "react-router-dom"
     import { Client } from "@petfinder/petfinder-js";
-import Cards from "../components/Cards";
-import "../App.css";
+import Cards from "../../components/Cards";
+import "../../App.css";
 
 
 function Pets() {

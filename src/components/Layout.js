@@ -5,6 +5,7 @@ import Footer from "./Footer"
 
 export default function Layout() {
     return (
+      <> 
         <div className="site-wrapper">
             <Header />
             <main>
@@ -12,5 +13,6 @@ export default function Layout() {
             </main>
             <Footer />
         </div>
+      </> 
     )
 }

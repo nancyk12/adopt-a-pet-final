@@ -2,7 +2,7 @@
  
 
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 //import Logo from "../assets/images/logo.png";
 function Navbar() {
   return (
@@ -11,7 +11,7 @@ function Navbar() {
         {/* <img src={Logo} alt="logo" /> */}
       </NavLink>
       <nav>
-        <NavLink to="/vans">Vans</NavLink>
+        <NavLink to="/">Vans</NavLink>
         <NavLink to="/about">About</NavLink>
       </nav>
     </header>
