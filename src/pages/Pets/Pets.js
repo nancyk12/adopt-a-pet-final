@@ -1,11 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link,useSearchParams,
-    useLoaderData,
-    defer,
-    Await } from "react-router-dom"
-    import { Client } from "@petfinder/petfinder-js";
-import Cards from "../../components/Cards";
+import { Link } from "react-router-dom"
+import { Client } from "@petfinder/petfinder-js";
+//import Cards from "../../components/Cards";
 import "../../App.css";
 
 
@@ -66,7 +63,7 @@ function Pets() {
                     placeholder="Zipcode, i.e. 90210"
                     onChange={handleZipCodeChange}
                 />
-                <button className="button" onClick={handleSubmit}>Search </button>
+                <button className="search-button" onClick={handleSubmit}>Search </button>
 			</div>
 
 
@@ -77,7 +74,7 @@ function Pets() {
 				animals.map((animal) => {
 					return (
 					  <div key={animal.id} className="pet-tile">	
-                       <Link to={`/animal/${animal.id}`}>
+                       <Link to={`/pets/${animal.id}`}>
                          <div className="pet-tile img">
                          {animal.primary_photo_cropped !== null ?
                          <img

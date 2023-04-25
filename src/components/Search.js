@@ -40,10 +40,12 @@ function SearchBar(){
 		setZipcode(inputField);
 	};
 	return (
-		<div className="App">
+	  <div className="App">
 			<h1>Pets</h1>
 
-         <div className="form">
+		<div className="search-container"> 
+
+		<div className="form">
             <label className="label" htmlFor="query">Select Pet Type</label>
                 <select value={selected} onChange={handleSelectChange}>
                     <option>Select Pet Type</option>
@@ -63,7 +65,8 @@ function SearchBar(){
                     onChange={handleZipCodeChange}
                 />
                 <button className="button" onClick={handleSubmit}>Search </button>
-			</div>
+			 </div>
+		   </div>
 
 
 			<div className="card-list-container">

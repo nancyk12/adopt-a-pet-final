@@ -2,14 +2,15 @@
   box-sizing: border-box;
 }
 
-/*.App {
-  padding: 4rems;
-}*/
+.App {
+  padding: 4rem;
+}
 
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #FFF7ED;
+  background-color: #FFFFFF;
+  /*background-color: #FFF7ED;*/
   font-family: "Inter", sans-serif;
 }
 
@@ -27,27 +28,33 @@ body {
   margin: 10px auto 0 auto;
   }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #FFF7ED;
-    font-family: "Inter", sans-serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF7ED;
+  font-family: "Inter", sans-serif;
 }
 
 body::-webkit-scrollbar {
   display: none;
 } 
 
-.header {
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  background-color:#685454;
   height: 110px;
   display: flex;
   align-items: center;
   padding-block: 10px;
 }
 
-.header-logo {
-  width: 100%;
-}  
+ 
 header .site-logo {
   color: black;
   margin-right: auto;
@@ -58,14 +65,36 @@ header .site-logo {
 
 header a {
   text-decoration: none;
-  color: #4D4D4D;
+  /* color: #4D4D4D; */
+  color: #FFFFFF;
   font-weight: 600;
   padding: 5px 20px;
 }
-
+  /* color: #161616; */
 header a:hover {
-  color: #161616;
+
+  color: #C4B29C;
   text-decoration: underline;
+} 
+
+header a:active {
+  color: #C4B29C;
+  text-decoration: underline;
+}
+
+
+header .login-icon {
+  height: 18px;
+  width: 18px;
+}
+
+header .login-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
 }
 
 main {
@@ -73,8 +102,8 @@ main {
 }
 
 footer {
-  background-color: #161616;
-  color: #AAAAAA;
+  background-color:#685454;
+  color: #FFFFFF;
   height: 74px;
   display: flex;
   flex-shrink: 0;
@@ -100,6 +129,8 @@ footer {
 .link-button:hover {
   transform: translate(1px, 1px);
 }
+
+
 
 /*** HOME PAGE ***/
 .home-container {
@@ -127,7 +158,8 @@ footer {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  background-color: #FF8C38;
+  background-color: #EA8A8A;
+  /*background-color: #FF8C38;*/
   border: none;
   width: 100%;
   margin-top: 200px;
@@ -164,7 +196,7 @@ footer {
 }
 
 .about-page-cta {
-  background-color: #FFCC8D;
+  background-color: #F5E4C3;
   color: #161616;
   padding-inline: 32px;
   padding-bottom: 32px;
@@ -178,11 +210,40 @@ footer {
 }
 
 .about-page-cta .link-button {
-  background-color: #161616;
+  background-color: #EA8A8A;
   color: white;
   border-radius: 10px;
 }
-/*** PET PAGES ***/
+/** PET PAGES **/
+.form {
+  width: 90vw; 
+  /*width: 1085px;*/
+  /*height: 145px;*/
+  border-radius: 10px;
+  padding-left: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin: 3rem 0;
+  background-color: #F5E4C3;
+
+} 
+
+.search-button {
+background-color: #EA8A8A;
+outline: none;
+}
+
+.nav-links {
+  padding: 12px 180px;
+  background: #56009b;
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+
 .pet-list-container {
     padding-inline: 23px
 }

@@ -42,6 +42,7 @@ function App() {
               errorElement={<Error />}
               
           />
+          {/* :id is the params name */}
           <Route 
               path="pets/:id" 
               element={<PetDetail />} 
