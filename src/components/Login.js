@@ -1,0 +1,26 @@
+function Login(){
+return(
+<div ng-controller="LoginController">
+    <section id="login">
+        <div class="row">
+            <div class="small-12 medium-offset-3 medium-6 large-offset-4 large-4 columns">
+                <h2 class="text-center">Welcome back! Log in</h2>
+                <form id="loginForm">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <input ng-model="user.username" type="text" placeholder="username" />
+                            <input ng-model="user.password" type="password" placeholder="password" />
+                            <a ng-click="login(user)" class="button expand">Log in</a>
+                        </div>
+                    </div>
+                </form>
+                <p class="text-center">New to Petfinder? <a href="#/signup">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+)
+}
+
+export default Login;
