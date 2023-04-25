@@ -29,13 +29,13 @@ function Header() {
                     to="/" 
                     className={({isActive}) => isActive ? "active-link" : null}
                     >
-                    Host
+                    Home
                 </NavLink> 
                 <NavLink 
                     to="/host"
                     className={({isActive}) => isActive ? "active-link" : null}
                     >
-                    Home
+                    Host
                 </NavLink>
                 <NavLink 
                     to="/about"
@@ -50,7 +50,13 @@ function Header() {
                 >
                     Pets
                 </NavLink>
-        </nav> 
+
+        </nav> <NavLink 
+                    to="/login"
+                    className={({isActive}) => isActive ? "active-link" : null}
+                >
+                    Login
+                </NavLink>
       </header>
     </>  
     )

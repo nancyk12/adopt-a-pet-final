@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
 }
 
 .header-logo {
-  width: 40%;
+  width: 100%;
 }  
 header .site-logo {
   color: black;
@@ -66,6 +66,22 @@ header a {
 header a:hover {
   color: #161616;
   text-decoration: underline;
+}
+
+main {
+  margin-bottom: 84px;
+}
+
+footer {
+  background-color: #161616;
+  color: #AAAAAA;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
 }
 
 .link-button {
@@ -166,7 +182,7 @@ header a:hover {
   color: white;
   border-radius: 10px;
 }
-/*** VAN PAGES ***/
+/*** PET PAGES ***/
 .pet-list-container {
     padding-inline: 23px
 }
@@ -234,6 +250,9 @@ header a:hover {
   background-color: hwb(283 27% 5%);
 }
 
+.pet-type.Small & Furry:hover, .pet-type. Small & Furry .selected {
+  background-color: hwb(304 7% 7%);
+}
 .pet-type.Other:hover, .pet-type.Barnyard.selected {
   background-color: #161616;
 }
@@ -331,3 +350,70 @@ background-color: #beae9d;
   margin-left: auto;
   margin-right: auto;
 }
+
+
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 27px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;    
+}
+
+.login-form > input {
+  border: 1px solid rgba(209, 213, 219);
+  height: 40px;
+  text-indent: 10px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+
+.login-form > input:focus {
+  outline: none;
+}
+
+.login-form > input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+
+.login-form > button {
+  background-color: #FF8C38;
+  border: none;
+  border-radius: 6px;
+  height: 55px;
+  margin-top: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.login-form > button:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.red {
+  color: #cc0000;
+}
+

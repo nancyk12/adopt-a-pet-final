@@ -54,6 +54,7 @@ function Pets() {
                     <option value="Cat"> Cats</option>
                     <option value="Bird"> Birds</option>
                     <option value="Rabbit"> Rabbits</option>
+                    <option value="Guinea_Pig"> Guinea Pigs</option>
                     <option value="Barnyard"> Others</option>
                 </select>
 

@@ -10,9 +10,13 @@ import NavBar from "./components/NavBar";
 import Cards from "./components/Cards";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Pets from "./pages/Pets/Pets";
-import PetDetail from "./pages/Pets/PetDetail";
+import Pets, { loader as petsLoader } from "./pages/Pets/Pets";
+import PetDetail, { loader as petDetailLoader } from "./pages/Pets/PetDetail";
 import Layout from "./components/Layout"
+import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
+import Error from "./components/Error"
+
+
 
 //import Login from "./components/Login";
 
@@ -27,11 +31,28 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="pets" element={<Pets />} />
-          <Route path="pets/:id" element={<PetDetail />} />
+          <Route
+              path="login"
+              element={<Login />}
+              
+    />
+          <Route 
+              path="pets" 
+              element={<Pets />} 
+              errorElement={<Error />}
+              
+          />
+          <Route 
+              path="pets/:id" 
+              element={<PetDetail />} 
+              errorElement={<Error />}
+              
+          />
           
           
         </Route>
+
+       
       </Routes>
     </BrowserRouter>
 	)		
