@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+Adopt-A-Pet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+READ ME
 
-## Available Scripts
+This project was created using the MERNstack (MongoDB, ExpressJS, ReactJS, and NodeJS), that included user login. It has user login and registration functionality that uses the CRUD functionality (Create, Read, Update, and Delete). 
 
-In the project directory, you can run:
+It uses the following Tech Stack:
+•	Node – Runtime
+•	React – Client Framework
+•	MongoDB – Database
+•	Git – Code Versioning
+•	Github – Code Storage and Collaboration
+•	CORS – Express CORS Library
+•	bcryptJS – User Authentication
+•	JsonWebToken – User Auth Tokens
+•	Nodemon – Server Hot Reloading
+•	React-Router – Client Side Routing
 
-### `npm start`
+This project contains: 
+1.	Navigation bar
+2.	Searchbar
+3.	Home page
+4.	About page
+5.	Blog page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6.	Login and registration page:
+•	The login and signup page has the ability to encrypt the user’s password via salt+hash algorithm.
+•	A user ID Token is generated using JsonWebToken. The ID Token is persisted on client side with local storage. The client can check for the existence of the token for prompting the user to authenticate.
+•	The user can log out of the application and login with a different account. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+7.	A searchable database of adoptable pets from the Petfinder API. 
+•	The searchbar filters pets available for adoption by location, US Zip-code input, and type in the drop-down menu. 
 
-### `npm test`
+8.	Products Page – Shows a list of filtered pets with photo, name, type, breed and location in a grid of cards.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+9.	The user can click on a pet card after the search and see the full pet profile.
+o	Name
+o	Location
+o	Type
+o	Breed
+o	Age
+o	Spay / Neuter 
+o	Housebroken/ Good with children / Trained
 
-### `npm run build`
+10.	For the checkout cart requirement, the user has the option to click on save so they can return to the pet’s profile. The server creates a new order document in the database. The order document should have its own ID, the ID of the user that checked out as well as the checked out cart items stored on it. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+11.	From the profile page the user, also has the option to be routed an adoption page, where they can communicate with the organization listing the pet for adoption. 

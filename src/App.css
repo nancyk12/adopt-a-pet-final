@@ -385,6 +385,10 @@ i[class*='pet-type-'] {
 
 .pet-detail-container {
     padding: 27px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+
   
 }
   
@@ -432,7 +436,7 @@ i[class*='pet-type-'] {
  }
   
 .pet-detail .link-button {
-     background-color: #FF8C38;
+     background-color: #EA8A8A;
     color: white;
     font-size: 1.125rem;
 }
