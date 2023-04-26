@@ -45,9 +45,9 @@ function SearchBar(){
 
 		<div className="search-container"> 
 
-		<div className="form">
+		<div className="form-container">
             <label className="label" htmlFor="query">Select Pet Type</label>
-                <select value={selected} onChange={handleSelectChange}>
+                <select className="form-textarea" value={selected} onChange={handleSelectChange}>
                     <option>Select Pet Type</option>
                     <option value="Dog"> Dogs</option>
                     <option value="Cat"> Cats</option>
@@ -57,8 +57,8 @@ function SearchBar(){
                 </select>
 
 				<br/>
-                <label className="label" htmlFor="query">ZIP Code</label>
-                <input className="input" type="text" name="query"
+                <label className="form-label" htmlFor="query">ZIP Code</label>
+                <input className="form-input" type="text" name="query"
                 
                     value={inputField}
                     placeholder="Zipcode, i.e. 90210"

@@ -214,9 +214,13 @@ footer {
   color: white;
   border-radius: 10px;
 }
+
+
+
 /** PET PAGES **/
-.form {
-  width: 90vw; 
+
+.form-container {
+  width: 80vw; 
   /*width: 1085px;*/
   /*height: 145px;*/
   border-radius: 10px;
@@ -225,35 +229,73 @@ footer {
   padding-bottom: 2.5rem;
   margin: 3rem 0;
   background-color: #F5E4C3;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 
 } 
 
+.form-group {
+  margin: 10px;
+  margin-top: 0px;
+}
+
+.form-group-input {
+  /* border: 1px solid #685454; */
+  border-radius: 10px;
+  width: 15rem;
+  height: 4rem;
+  text-align: center;
+  background: #fff;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--small-text);
+  /* margin-bottom: 0.5rem; */
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* .form-row {
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+} */
+
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
 .search-button {
-background-color: #EA8A8A;
-outline: none;
-}
-
-.nav-links {
-  padding: 12px 180px;
-  background: #56009b;
-  color: white;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-}
-
-
-.pet-list-container {
-    padding-inline: 23px
+  background-color: #EA8A8A;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  width: 6rem;
+  height: 4rem;
 }
 
 .pet-list {
   display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    gap: 34px;
-    margin-top: 57px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 34px;
+  margin-top: 57px;
+}
+
+.pet-tile {
+  background-color: #F5E4C3;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .pet-tile a {
@@ -262,9 +304,14 @@ outline: none;
 }
 
 .pet-tile img {
+    background-color:#97a6bb;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 5, 0, 5px;
 }
+
+/* .pet-info {
+  padding: 10px;
+} */
 
 .pet-list-container button {
     margin-right: 20px;
@@ -331,8 +378,9 @@ outline: none;
     color: #4D4D4D;
 }
 
-i[class*='van-type-'] {
+i[class*='pet-type-'] {
     padding: 7px 14px;
+    margin-bottom: 14px;
 }
 
 .pet-detail-container {

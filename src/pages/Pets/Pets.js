@@ -43,9 +43,10 @@ function Pets() {
 		<div className="App">
 			<h1>Pets</h1>
 
-         <div className="form">
-            <label className="label" htmlFor="query">Select Pet Type</label>
-                <select value={selected} onChange={handleSelectChange}>
+         <div className="form-container">
+            <div className="form-group">
+              <label className="form-label" htmlFor="query">Select Pet Type</label>
+                <select className="form-group-input" value={selected} onChange={handleSelectChange}>
                     <option>Select Pet Type</option>
                     <option value="Dog"> Dogs</option>
                     <option value="Cat"> Cats</option>
@@ -54,16 +55,22 @@ function Pets() {
                     <option value="Guinea_Pig"> Guinea Pigs</option>
                     <option value="Barnyard"> Others</option>
                 </select>
+                </div>
 
 				<br/>
-                <label className="label" htmlFor="query">ZIP Code</label>
-                <input className="input" type="text" name="query"
-                
+            <div className="form-group">  
+                <label className="form-label" htmlFor="query">ZIP Code</label>
+                <input className="form-group-input" type="text" name="query"
+               
                     value={inputField}
                     placeholder="Zipcode, i.e. 90210"
                     onChange={handleZipCodeChange}
                 />
+            </div> 
+              <div className="form.group"> 
+              <label className="form-label">&#128054;</label>
                 <button className="search-button" onClick={handleSubmit}>Search </button>
+              </div>     
 			</div>
 
 
@@ -73,19 +80,25 @@ function Pets() {
 				{animals.length > 0 &&
 				animals.map((animal) => {
 					return (
+                     <div className="pet-tile">  
 					  <div key={animal.id} className="pet-tile">	
+
                        <Link to={`/pets/${animal.id}`}>
-                         <div className="pet-tile img">
+                         <div className="pet-tile-img">
                          {animal.primary_photo_cropped !== null ?
                          <img
-                        style={{ width: "300px", height: "300px" }}
-                        src={animal.primary_photo_cropped.full}/> 
+                        style={{ width: "300spx", height: "300px" }}
+                        src={animal.primary_photo_cropped.full} alt="pet"/> 
                         : 
-                        <img style={{ width: "300px", height: "300px" }} src="images/pet-photo-shoot.jpeg"/>}
+                        <img style={{ width: "300px", height: "300px" }} src="images/pet-photo-shoot.jpeg" alt="pet"/>}
                       </div> 
+
                       <div className="pet-info">
-                        <h3>{animal.name}</h3>
-                        <span>{animal.age}  •  {animal.gender}  •  {animal.breeds.primary}</span>
+
+                        <h3>{animal.name.substring(0, 25)}</h3>  
+
+
+                        <span>{animal.age}  •  {animal.gender}  •  {animal.breeds.primary.substring(0, 25)}</span>
                        <br/>
                         <span>{animal.contact.address.city}, {animal.contact.address.state}</span>
                       </div>
@@ -93,8 +106,9 @@ function Pets() {
                       <i className={`pet-type ${animal.type} selected`}>{animal.type}</i>
 
                        </Link>
-                        {/*<Cards animal={animal}/>*/}
+                       
                        </div>  
+                      </div>
 					  
 						);
 					})	}
