@@ -41,7 +41,7 @@ function SearchBar(){
 	};
 	return (
 	  <div className="App">
-			<h1>Pets</h1>
+		<h1>Pets</h1>
 
 		<div className="search-container"> 
 

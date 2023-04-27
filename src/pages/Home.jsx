@@ -8,8 +8,8 @@ export default function Home() {
      <> 
         <div className="home-container">
          
-            <h1>You got the travel plans, we got the travel vans.</h1>
-            <p>Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
+            <h1>All you need is love … And a pet</h1>
+            <p>Search for your new best friend. </p>
             <Link to="pets">Find your pet!</Link>
         </div>
         <Search/>

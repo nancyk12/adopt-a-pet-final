@@ -11,7 +11,7 @@ function Navbar() {
         {/* <img src={Logo} alt="logo" /> */}
       </NavLink>
       <nav>
-        <NavLink to="/">Vans</NavLink>
+        <NavLink to="/">Pets</NavLink>
         <NavLink to="/about">About</NavLink>
       </nav>
     </header>
