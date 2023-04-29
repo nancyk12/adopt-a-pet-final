@@ -17,7 +17,7 @@ function Header() {
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
-        color: "#161616"
+        color: "#EA8A8A"
     }
     
     return (
@@ -27,36 +27,44 @@ function Header() {
         <nav>
                 <NavLink 
                     to="/" 
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    className={({isActive}) => isActive ? activeStyles : null}
                     >
                     Home
                 </NavLink> 
                 <NavLink 
                     to="/host"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    className={({isActive}) => isActive ? activeStyles : null}
                     >
                     Host
                 </NavLink>
                 <NavLink 
                     to="/about"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    className={({isActive}) => isActive ? activeStyles : null}
                 >
                     About
                 </NavLink>
           
                 <NavLink 
                     to="/pets"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Pets
                 </NavLink>
 
-        </nav> <NavLink 
+                <NavLink 
+                    to="/blog"
+                    className={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Blog
+                </NavLink>
+
+                 <NavLink 
                     to="/login"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Login
                 </NavLink>
+            </nav>
       </header>
     </>  
     )

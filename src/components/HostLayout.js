@@ -12,7 +12,7 @@ function HostLayout() {
         <>
             <nav className="host-nav">
                 <NavLink
-                    to="."
+                    to="host"
                     end
                     style={({ isActive }) => isActive ? activeStyles : null}
                 >

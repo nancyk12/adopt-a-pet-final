@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+colors{
+--e-global-color-primary: #685454;
+--e-global-color-secondary: #EA8A8A;
+--e-global-color-text: #685454;
+}
+
 .App {
   padding: 4rem;
 }
@@ -72,15 +78,14 @@ header a {
 }
   /* color: #161616; */
 header a:hover {
-
   color: #C4B29C;
   text-decoration: underline;
 } 
 
 header a:active {
-  color: #C4B29C;
+  color: #EA8A8A;
   text-decoration: underline;
-}
+} 
 
 
 header .login-icon {
@@ -276,12 +281,20 @@ footer {
 
 .search-button {
   background-color: #EA8A8A;
-  border: none;
+  border: transparent;
   border-radius: 5px;
   color: #FFFFFF;
   width: 6rem;
   height: 4rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
+
+.search-button:hover{
+  background-color: #e75555;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 
 .pet-list {
   display: grid;
@@ -391,7 +404,7 @@ i[class*='pet-type-'] {
 
   
 }
-  
+  /*  PetDetail Page*/
 .pet-detail-container .back-button {
     color: black;
     text-decoration: none;
@@ -475,12 +488,87 @@ background-color: #beae9d;
   color: white;
 }
 
+/* Blog */
+.blog-link-wrapper {
+  color: unset;
+  text-decoration: unset;
+}
+
+.blog-list {
+  margin-top: 54px;
+  padding-inline: 26px;
+}
+
+.blog-title {
+  padding-inline: 26px;
+}
+
+.blog-single {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
+}
+
+.blog-single > img {
+  height: 300px;
+  border-radius: 5px;
+  margin-right: 17px;
+}
+
+.blog-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 10px;
+}
+
+.blog-info p {
+  margin-block: 10px;
+}
+
+
+/* Single Blog Page */
+
+
+.blog-single-layout-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+}
+
+.blog-single {
+  display: flex;
+  align-items: center;
+}
+
+.blog-single > img {
+  height: 160px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.blog-single-info-text > h3 {
+  margin-top: 24px;
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.blog-single-info-text > h4 {
+  font-size: 20px;
+  margin-block: 0;
+}
+
+/* Login */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-inline: 27px;
 }
+
 
 .login-form {
   display: flex;
@@ -528,5 +616,22 @@ background-color: #beae9d;
 
 .red {
   color: #cc0000;
+}
+
+.host-nav {
+  display: flex;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
 }
 

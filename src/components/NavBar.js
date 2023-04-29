@@ -13,6 +13,7 @@ function Navbar() {
       <nav>
         <NavLink to="/">Pets</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/blog">Blog</NavLink>
       </nav>
     </header>
   );
