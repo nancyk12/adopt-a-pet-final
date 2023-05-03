@@ -53,7 +53,9 @@ body::-webkit-scrollbar {
 
 
 header {
+  width: 100%;
   background-color:#685454;
+  color: #FFFFFF;
   height: 110px;
   display: flex;
   align-items: center;
@@ -396,15 +398,19 @@ i[class*='pet-type-'] {
     margin-bottom: 14px;
 }
 
-.pet-detail-container {
+
+  /*  PetDetail Page*/
+  .pet-detail-container {
+    padding-top: 3rem;
     padding: 27px;
     display: flex;
-   justify-content: center;
-   align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
   
 }
-  /*  PetDetail Page*/
+
 .pet-detail-container .back-button {
     color: black;
     text-decoration: none;
@@ -418,17 +424,20 @@ i[class*='pet-type-'] {
     text-decoration: underline;
 }
   
+.pet-detail-img {
+  border-radius: 5px;
+  min-height: 300px;
+  flex: 1 1 60rem;
+    margin-block: 47px;
+}
+
+
 .pet-detail {
-    display: flex;
-    flex-direction: column;
+    flex: 1 1 30rem;
     color: #161616;
 }
   
-.pet-detail img {
-    border-radius: 5px;
-    margin-block: 47px;
-}
-  
+
 .pet-detail h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -561,6 +570,20 @@ background-color: #beae9d;
   margin-block: 0;
 }
 
+
+/* Not Found Page*/
+
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+}
+
+
 /* Login */
 .login-container {
   display: flex;
@@ -568,7 +591,6 @@ background-color: #beae9d;
   align-items: center;
   padding-inline: 27px;
 }
-
 
 .login-form {
   display: flex;
@@ -600,7 +622,7 @@ background-color: #beae9d;
 }
 
 .login-form > button {
-  background-color: #FF8C38;
+  background-color: #EA8A8A;;
   border: none;
   border-radius: 6px;
   height: 55px;
@@ -609,15 +631,12 @@ background-color: #beae9d;
   font-family: "Inter", sans-serif;
 }
 
-.login-form > button:disabled {
-  background-color: #aaaaaa;
-  cursor: not-allowed;
-}
-
 .red {
   color: #cc0000;
 }
 
+
+/* Host NavBar */
 .host-nav {
   display: flex;
 }
@@ -633,5 +652,86 @@ background-color: #beae9d;
   color: #161616;
   text-decoration: underline;
   font-weight: 600;
+}
+
+/*  Alt Pet Detail Layout*/
+.host-van-detail-layout-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+  display: flex;
+}
+
+.host-van-detail {
+  display: flex;
+  align-items: center;
+}
+
+.host-van-detail > img {
+  height: 160px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.host-van-detail-info-text > h3 {
+  margin-top: 24px;
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.host-van-detail-info-text > h4 {
+  font-size: 20px;
+  margin-block: 0;
+}
+
+.host-van-detail-nav {
+  display: flex;
+  margin-block: 25px;
+}
+
+.host-van-detail-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-van-detail-nav a:first-of-type {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 15px;
+  margin-left: -15px;
+}
+
+.host-van-detail-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.host-van-detail-info > h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.host-van-detail-info > h4 > span {
+  font-weight: 500;
+}
+
+.host-van-price {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.host-van-price > span {
+  font-size: 16px;
+  color: #4D4D4D;
+}
+
+.host-van-detail-image {
+  height: 100px;
+  border-radius: 5px;
 }
 

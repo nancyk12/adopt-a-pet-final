@@ -1,4 +1,4 @@
-//import React from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 //import { useEffect, useState } from "react";
 //import { Client } from "@petfinder/petfinder-js";
@@ -6,52 +6,94 @@ import {Link} from "react-router-dom";
 //import { Card, Row, Col } from "react-bootstrap";
 //import Button from 'react-bootstrap/Button';
 //import "./Cards.css";
-import "./Cards.scss"
-//import "../App.css";
+//import "./Cards.scss"
+import "../App.css";
 
 
 const Cards = (props) => {
    
   const {animal} = props;
 return (
+ <>
+  <div className="pet-list-container">
+            <h1>Explore our adoptable pets!</h1>  
+			  <div className="pet-list">
+				{/* {animals.length > 0 &&
+				animals.map((animal) => {
+					return ( */}
+                     <div className="pet-tile">  
+					  <div key={animal.id} className="pet-tile">	
 
-<div className="wrapper">  
-<div className="card">
-<div key={animal.id} >
-{/* <div style={{
-						border: "1px solid",
-						height: "400px",
-						width: "200px",
-						margin: "20px",
-            overflow: "hidden",
-					}}> */}
-  <div className="card__img">
-  {animal.primary_photo_cropped !== null ?
-                  <img
-                   style={{ width: "200px", height: "200px" }}
-                   src={animal.primary_photo_cropped.full}/> 
-                   : 
-                   <img style={{ width: "200px", height: "200px" }} src="image/pet-photo-shoot.jpeg"/>}
-  </div>
-  <div className="card__body">
-    <Link to={"/profile/" + animal.id}>
-      <h3 className="card__title">{animal.name}</h3>
-     </Link >
-      <span className="card__price">{animal.species}</span>
-      <br/>
-      <span className="card__description"> {animal.breeds.primary}</span>
-      <br/>
-      <span className="card__description">{animal.age}  •  {animal.gender}</span>
-      {/* <p>Color: {animal.colors.primary}</p> */}
-      <p>{animal.contact.address.city}, {animal.contact.address.state} </p>
-      {/* <p>About {animal.name}: {animal.description}</p> */}
-      <button className="card__btn">Pet Profile</button>
-  </div>
-</div>   
-</div> 
-</div>
+                       <Link to={`/pets/${animal.id}`}>
+                         <div className="pet-tile-img">
+                         {animal.primary_photo_cropped !== null ?
+                         <img
+                        style={{ width: "300px", height: "300px" }}
+                        src={animal.primary_photo_cropped.full} alt="pet"/> 
+                        : 
+                        <img style={{ width: "300px", height: "300px" }} src="images/pet-photo-shoot.jpeg" alt="pet"/>}
+                      </div> 
+
+                      <div className="pet-info">
+
+                        <h3>{animal.name.substring(0, 25)}</h3>  
+
+
+                        <span>{animal.age}  •  {animal.gender}  •  {animal.breeds.primary.substring(0, 25)}</span>
+                       <br/>
+                        <span>{animal.contact.address.city}, {animal.contact.address.state}</span>
+                      </div>
+                     <br/>
+                      <i className={`pet-type ${animal.type} selected`}>{animal.type}</i>
+
+                       </Link>
+                       
+                  </div>  
+                </div>
+                	);
+                })	}
+            </div>
+            </div>
+ </>
+
+  );};
+
+export default Cards;
+
+// {/* <div className="wrapper">  
+// <div className="card">
+// <div key={animal.id} >*/}
+// {/* <div style={{
+// 						border: "1px solid",
+// 						height: "400px",
+// 						width: "200px",
+// 						margin: "20px",
+//             overflow: "hidden",
+// 					}}> */}
+//  {/* <div className="card__img">
+//   {animal.primary_photo_cropped !== null ?
+//                   <img
+//                    style={{ width: "200px", height: "200px" }}
+//                    src={animal.primary_photo_cropped.full}/> 
+//                    : 
+//                    <img style={{ width: "200px", height: "200px" }} src="image/pet-photo-shoot.jpeg"/>}
+//   </div>
+//   <div className="card__body">
+//     <Link to={"/profile/" + animal.id}>
+//       <h3 className="card__title">{animal.name}</h3>
+//      </Link >
+//       <span className="card__price">{animal.species}</span>
+//       <br/>
+//       <span className="card__description"> {animal.breeds.primary}</span>
+//       <br/>
+//   <span className="card__description">{animal.age}  •  {animal.gender}</span>*/}
+//       {/* <p>Color: {animal.colors.primary}</p> */}
+//       // <p>{animal.contact.address.city}, {animal.contact.address.state} </p>
+//       {/* <p>About {animal.name}: {animal.description}</p> */}
+//       // <button className="card__btn">Pet Profile</button>
+// //   </div>
+// // </div>   
+// // </div> 
+// // </div> 
 
    
- );};
-
- export default Cards;

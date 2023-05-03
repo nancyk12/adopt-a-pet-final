@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Pets from "../pages/Pets/Pets";
 import PetDetail from "../pages/Pets/PetDetail";
+//import Favorites from "..pages/Favorites";
 import "../App.css";
 import { useEffect, useState } from "react";
 import { Client } from "@petfinder/petfinder-js";
@@ -12,6 +13,7 @@ import { Client } from "@petfinder/petfinder-js";
 import { Link, NavLink } from "react-router-dom"
 
 
+	
 
 function Header() {
     const activeStyles = {
@@ -20,10 +22,14 @@ function Header() {
         color: "#EA8A8A"
     }
     
+
+
+  
     return (
     <>
       <header>
-        <Link className="site-logo" to="/">#Adopt-A-Pet</Link>
+
+     
         <nav>
                 <NavLink 
                     to="/" 
@@ -49,6 +55,13 @@ function Header() {
                     className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Pets
+                </NavLink>
+
+                <NavLink 
+                    to="/favorites"
+                    className={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Favorites
                 </NavLink>
 
                 <NavLink 

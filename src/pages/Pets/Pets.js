@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { Client } from "@petfinder/petfinder-js";
 //import Cards from "../../components/Cards";
-import "../../App.css";
+//import "../../App.css";
 
 
 function Pets() {
@@ -87,7 +87,7 @@ function Pets() {
                          <div className="pet-tile-img">
                          {animal.primary_photo_cropped !== null ?
                          <img
-                        style={{ width: "300spx", height: "300px" }}
+                        style={{ width: "300px", height: "300px" }}
                         src={animal.primary_photo_cropped.full} alt="pet"/> 
                         : 
                         <img style={{ width: "300px", height: "300px" }} src="images/pet-photo-shoot.jpeg" alt="pet"/>}
