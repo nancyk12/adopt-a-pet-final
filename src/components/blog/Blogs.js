@@ -1,6 +1,7 @@
 import React from "react";
 import BlogsCard from "./BlogsCard";
 import { useState } from "react";
+import BlogForm from "./BlogForm";
 
 
 function Blogs(props) {
@@ -21,12 +22,16 @@ function Blogs(props) {
 				    />);
 			
 			})} 
-			{/* <BlogsCard/>  */}
+			
 		  </div>
 	  </div>
-    </section>  
-    </>		
-	);
+    </section> 
+	<div>
+	  
+	  <BlogForm/>
+	</div>
+   </>		
+  );
 }
 
 export default Blogs;

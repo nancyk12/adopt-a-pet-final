@@ -9,10 +9,13 @@ colors{
 }
 
 .App {
+  
+  width: 100%;
   padding: 4rem;
 }
 
 html, body {
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: #FFFFFF;
@@ -35,6 +38,7 @@ body {
   }
 
 html, body {
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: #FFF7ED;
@@ -46,6 +50,7 @@ body::-webkit-scrollbar {
 } 
 
 .site-wrapper {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -141,6 +146,7 @@ footer {
 
 /*** HOME PAGE ***/
 .home-container {
+  width: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../public/images/pet-hero.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -401,12 +407,15 @@ i[class*='pet-type-'] {
 
   /*  PetDetail Page*/
   .pet-detail-container {
-    padding-top: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto;
+    padding-top: 5rem;
     padding: 27px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
 
   
 }
@@ -447,6 +456,75 @@ i[class*='pet-type-'] {
     align-self: flex-start;
 }
   
+.list-group {
+  --bs-list-group-color: #212529;
+  --bs-list-group-bg: #fff;
+  --bs-list-group-border-color: rgba(0, 0, 0, 0.125);
+  --bs-list-group-border-width: 1px;
+  --bs-list-group-border-radius: 0.375rem;
+  --bs-list-group-item-padding-x: 1rem;
+  --bs-list-group-item-padding-y: 0.5rem;
+  --bs-list-group-action-color: #495057;
+  --bs-list-group-action-hover-color: #495057;
+  --bs-list-group-action-hover-bg: #f8f9fa;
+  --bs-list-group-action-active-color: #212529;
+  --bs-list-group-action-active-bg: #e9ecef;
+  --bs-list-group-disabled-color: #6c757d;
+  --bs-list-group-disabled-bg: #fff;
+  --bs-list-group-active-color: #fff;
+  --bs-list-group-active-bg: #0d6efd;
+  --bs-list-group-active-border-color: #0d6efd;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 20px;
+  border-radius: var(--bs-list-group-border-radius);
+  border-top-left-radius: ;
+  border-top-right-radius: ;
+  border-bottom-right-radius: ;
+  border-bottom-left-radius: ;
+}
+  .list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  color: var(--bs-list-group-color);
+  text-decoration: none;
+  background-color: var(--bs-list-group-bg);
+  border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+user agent stylesheet
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+/* Favorites/Heart Icon*/
+.favorite {
+  color: var(--red);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.ri-heart-fill {
+  opacity: .7;
+}
+
+.ri-delete-bin-line, .ri-delete-bin-fill {
+  font-size: 1.3em;
+  cursor: pointer;
+}
 .pet-detail .van-price {
     font-size: 1.25rem;
     margin-bottom: 10px;
@@ -622,6 +700,16 @@ background-color: #beae9d;
 }
 
 .login-form > button {
+  background-color: #EA8A8A;;
+  border: none;
+  border-radius: 6px;
+  height: 55px;
+  margin-top: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.login-form-button {
   background-color: #EA8A8A;;
   border: none;
   border-radius: 6px;

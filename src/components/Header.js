@@ -28,7 +28,7 @@ function Header() {
     return (
     <>
       <header>
-
+      <Link className="site-logo" to="/">#Adopt-A-Pet</Link>
      
         <nav>
                 <NavLink 

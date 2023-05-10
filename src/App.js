@@ -5,32 +5,17 @@ import "./App.css";
 import  { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Client } from "@petfinder/petfinder-js";
-import NavBar from "./components/NavBar";
-//import Search from "./components/Search";
-//import Form from "./components/Form";
-import Cards from "./components/Cards";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Pets, { loader as petsLoader } from "./pages/Pets/Pets";
 import PetDetail, { loader as petDetailLoader } from "./pages/Pets/PetDetail";
-import Dashboard from "./pages/Host/Dashboard";
-import Income from "./pages/Host/Income"
-import Reviews from "./pages/Host/Reviews"
-import HostVans from "./pages/Host/HostVans"
-import HostVanDetail from "./pages/Host/HostVanDetail"
-import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout"
-import HostLayout from "./components/HostLayout"
 import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
 import Error from "./components/Error";
-//import Blog from "./pages/Blog";
 import Blogs from "./components/blog/Blogs";
-//import BlogsCard from "./components/blog/BlogsCard";
-import BlogSingle from "./pages/BlogSingle";
+import EditBlog from "./components/blog/EditBlog";
 import AuthRequired from "./components/AuthRequired";
-import Favorites from "./pages/Favorites";
-
-
+import Favorites from "./pages/Pets/Favorites";
 //import Login from "./components/Login";
 
 
@@ -40,7 +25,7 @@ function App() {
   const [blogs, setBlogs] = useState([]);
 	const [shouldRefresh, setShouldRefresh] = useState(false);
 
-	const url = "http://localhost:5001";
+	const url = "http://localhost:5005";
 	//useEffect first argument, takes in an anonymous callback function. second argument, dependency array
 	useEffect(() => {
 		const fetchData = async () => {
@@ -72,17 +57,14 @@ function App() {
 					}
 				/>
           <Route
-            path="blog/:id"
-            element={<BlogSingle />}
-            errorElement={<Error/>}
-    />
-
-
-          <Route
-              path="login"
-              element={<Login />}
-              
-    />
+						path="edit-blog/:id"
+						element={
+							<EditBlog
+								blogsProps={blogs}
+								setShouldRefreshProps={setShouldRefresh}
+							/>
+						}
+					/>
           <Route 
               path="pets" 
               element={<Pets />} 
@@ -101,17 +83,11 @@ function App() {
             path="favorites"
             element={<Favorites />}
             errorElement={<Error/>}
-          />
+          /> 
 
-          <Route path="host" element={<HostLayout />}>
-            <Route path="host" element={<Dashboard/>}/>
-            <Route path="host/income" element={<Income/>}/>
-            <Route path="host/reviews" element={<Reviews/>}/>
-            <Route path="host/vans" element={<HostVans/>}/>
-            <Route path="host/vans/:id" element={<HostVanDetail/>}/>
-          </Route>
+         
           
-          <Route path="*" element={<NotFound/>}/>
+          {/* <Route path="*" element={<NotFound/>}/> */}
 
         </Route>
 

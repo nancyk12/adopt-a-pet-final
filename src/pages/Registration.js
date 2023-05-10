@@ -1,33 +1,33 @@
 import "../App.css";
 import { useState } from "react";
+import { registerUser } from "../Auth/authUtils";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Auth/AuthContext";
 
-function Login() {
+
+export default function Registration() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const { login } = useAuth();
+	const [role, setRole] = useState("user");
 
 	const navigate = useNavigate();
 
 	const handleSubmit = async () => {
-		const userData = {
+		const newUser = {
 			email: email,
 			password: password,
+			role: role,
 		};
-		const loginResult = await login(userData);
-		if (loginResult) {
-            
+		const registerResult = await registerUser(newUser);  
+		if (registerResult) {
 			navigate("/");
-		} else {
-			navigate("/register");
 		}
 	};
-	return (
+
+    return(
       <div>
         <div className="login-container">
           <div className="login-form"> 
-			<h1>Login Page</h1>
+			<h1>Registration Page</h1>
 			<label htmlFor="email">Email:</label>
 			<input
 				type="text"
@@ -43,11 +43,9 @@ function Login() {
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 			/>
-			<button onClick={handleSubmit}>Login</button>
+			<button onClick={handleSubmit}>Register</button>
            </div>  
         </div>
       </div>
     );
-  }
-
-  export default Login;
+}

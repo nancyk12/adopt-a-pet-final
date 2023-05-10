@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink, Outlet } from "react-router-dom"
 
-function HostLayout() {
+function BlogNav() {
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
@@ -12,7 +12,7 @@ function HostLayout() {
         <>
             <nav className="host-nav">
                 <NavLink
-                    to="host"
+                    to="blogs"
                     end
                     style={({ isActive }) => isActive ? activeStyles : null}
                 >
@@ -46,4 +46,4 @@ function HostLayout() {
     )
 }
 
-export default HostLayout;
+export default BlogNav;

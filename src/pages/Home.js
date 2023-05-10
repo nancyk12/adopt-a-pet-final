@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Search from "../components/Search";
+import Pets from "./Pets/Pets";
 import "../App.css";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
             <p>Search for your new best friend. </p>
             <Link to="pets">Find your pet!</Link>
         </div>
-        <Search/>
+        <Pets/>
      </> 
     )
 };

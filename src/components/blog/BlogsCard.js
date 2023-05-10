@@ -22,14 +22,15 @@ function BlogsCard(props) {
 	  <section>	
 		<div div className="blog-link-wrapper">
 		  <div className="blog-single"> 
-		  <div className="blog-single-img">
+		  <img src="images/pet-photo-shoot.jpeg" alt="blog"/>
+		  {/* <div className="blog-single-img">
                          {props.blog.image !== null ?
                          <img 
                         style={{ width: "300px", height: "300px" }}
                         src={props.blog.image} alt="pet"/> 
                         : 
                         <img style={{ width: "300px", height: "300px" }} src="images/pet-photo-shoot.jpeg" alt="blog"/>}
-                      </div> 
+                      </div>  */}
 			<div className="blog-info">
 				<h3>{props.blog.title}</h3>
 				<p>{props.blog.text}</p>
