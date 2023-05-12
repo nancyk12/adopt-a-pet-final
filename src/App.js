@@ -7,17 +7,24 @@ import { useEffect, useState } from "react";
 import { Client } from "@petfinder/petfinder-js";
 import Home from "./pages/Home";
 import About from "./pages/About";
+
 import Pets, { loader as petsLoader } from "./pages/Pets/Pets";
 import PetDetail, { loader as petDetailLoader } from "./pages/Pets/PetDetail";
-import Layout from "./components/Layout"
-import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
-import Error from "./components/Error";
-import Blogs from "./components/blog/Blogs";
-import EditBlog from "./components/blog/EditBlog";
-import AuthRequired from "./components/AuthRequired";
 import Favorites from "./pages/Pets/Favorites";
-//import Login from "./components/Login";
 
+import Layout from "./components/Layout"
+import Error from "./components/Error";
+
+import Blogs from "./components/blog/Blogs";
+import BlogForm from "./components/blog/BlogForm";
+import EditBlog from "./components/blog/EditBlog";
+//import AuthRequired from "./components/AuthRequired";
+
+//import Login from "./pages/Login";
+//import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
+import Registration from "./pages/Registration";
+import Login from "./pages/Login";
+import PrivatePage from "./pages/PrivatePage";
 
 
 
@@ -41,6 +48,7 @@ function App() {
 
 
   return (
+   <>
 	
       <Routes>
         <Route element={<Layout />}>
@@ -55,16 +63,30 @@ function App() {
 							setShouldRefreshProps={setShouldRefresh}
 						/>
 					}
-				/>
-          <Route
-						path="edit-blog/:id"
-						element={
-							<EditBlog
-								blogsProps={blogs}
-								setShouldRefreshProps={setShouldRefresh}
-							/>
-						}
-					/>
+				  />
+
+          <Route path="/home" element={<PrivatePage />}>
+            <Route
+              path="blog-form"
+              element={
+                <BlogForm
+                  setBlogsProps={setBlogs}
+                  setShouldRefreshProps={setShouldRefresh}
+                />
+              }
+            />
+            <Route
+              path="edit-blog/:id"
+              element={
+                <EditBlog
+                  blogsProps={blogs}
+                  setShouldRefreshProps={setShouldRefresh}
+                />
+              }
+            />
+          
+          </Route>  
+          
           <Route 
               path="pets" 
               element={<Pets />} 
@@ -88,14 +110,15 @@ function App() {
          
           
           {/* <Route path="*" element={<NotFound/>}/> */}
-
+          <Route path="/register" element={<Registration />}/>
+          <Route path="/login" element={<Login />}/>  
         </Route>
 
-       <Route element={<AuthRequired />}>
+       {/* <Route element={<AuthRequired />}>
          <Route path="protected" element={<h1>Super secret info here</h1>} />
-       </Route>
+       </Route> */}
     </Routes>
- 
+   </> 
 	)		
 			
 }

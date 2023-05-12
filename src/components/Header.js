@@ -11,6 +11,9 @@ import { useEffect, useState } from "react";
 import { Client } from "@petfinder/petfinder-js";
 
 import { Link, NavLink } from "react-router-dom"
+import  { useAuth } from "../Auth/AuthContext";
+import { removeUserToken } from "../Auth/authLocalStorage";
+import { useNavigate } from "react-router-dom";
 
 
 	
@@ -21,64 +24,87 @@ function Header() {
         textDecoration: "underline",
         color: "#EA8A8A"
     }
+
+    const { isVerified, logout } = useAuth();
+	const navigate = useNavigate();
+
+	const handleLogout = async () => {
+		const logoutResult = await logout();
+		if (logoutResult) navigate("/login");
+	};
     
 
 
   
     return (
     <>
-      <header>
+     <header>
       <Link className="site-logo" to="/">#Adopt-A-Pet</Link>
      
         <nav>
-                <NavLink 
+            <Link to="/">Home</Link>
+            <Link 
+                to="/about"
+                className={({isActive}) => isActive ? activeStyles : null}
+                >About</Link>
+            <Link 
+                to="/blog"
+                className={({isActive}) => isActive ? activeStyles : null}
+                >Blog</Link>
+            
+                {"    "}
+                {isVerified && <Link to="/home/blog-form">Create New Blog</Link>} {"    "}
+            <Link 
+                to="/pets"
+                className={({isActive}) => isActive ? activeStyles : null}
+                >Search Pets</Link>  
+
+                {"    "}
+                {isVerified && <Link to="/favorites">Favorites</Link>} {"    "}
+                {isVerified && <button className="logout-link-button" onClick={handleLogout}>Logout</button>}{" "}
+                {!isVerified && <Link to="/register">Register</Link>}
+                {"  "}
+                {!isVerified && <Link to="/login"><button className="link-button">Login</button></Link>}
+
+                {/* <NavLink 
                     to="/" 
                     className={({isActive}) => isActive ? activeStyles : null}
                     >
                     Home
-                </NavLink> 
-                <NavLink 
-                    to="/host"
-                    className={({isActive}) => isActive ? activeStyles : null}
-                    >
-                    Host
-                </NavLink>
-                <NavLink 
+                </NavLink>  */}
+               
+                {/* <NavLink 
                     to="/about"
                     className={({isActive}) => isActive ? activeStyles : null}
-                >
-                    About
-                </NavLink>
+                >About</NavLink> */}
           
-                <NavLink 
+                {/* <NavLink 
                     to="/pets"
                     className={({isActive}) => isActive ? activeStyles : null}
-                >
-                    Pets
-                </NavLink>
+                >Pets</NavLink> */}
 
-                <NavLink 
+                {/* <NavLink 
                     to="/favorites"
                     className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Favorites
-                </NavLink>
+                </NavLink> */}
 
-                <NavLink 
+                {/* <NavLink 
                     to="/blog"
                     className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Blog
-                </NavLink>
+                </NavLink> */}
 
-                 <NavLink 
+                 {/* <NavLink 
                     to="/login"
                     className={({isActive}) => isActive ? activeStyles : null}
                 >
                     Login
-                </NavLink>
+                </NavLink> */}
             </nav>
-      </header>
+     </header>
     </>  
     )
 }

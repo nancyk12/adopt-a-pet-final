@@ -12,15 +12,20 @@ colors{
   
   width: 100%;
   padding: 4rem;
-}
+} 
 
 html, body {
-  width: 100%;
+  /* width: 100%; */
   margin: 0;
   padding: 0;
-  background-color: #FFFFFF;
-  /*background-color: #FFF7ED;*/
+  /* background-color: #FFFFFF; */
+  background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
 }
 
 body::-webkit-scrollbar {
@@ -28,26 +33,9 @@ display: none;
 }
 
 body {
-  font-family: 'Poppins',sans-serif;
-  width: 100%
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.small {
-  width: 100px;
-  height: 100px;
-  margin: 10px auto 0 auto;
-  }
-
-html, body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #FFF7ED;
-  font-family: "Inter", sans-serif;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-} 
 
 .site-wrapper {
   width: 100%;
@@ -56,6 +44,28 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
+main {
+  width: 100%;
+}
+
+/* .small {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto 0 auto;
+  } */
+
+
+  .link-button {
+    background-color: #EA8A8A;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .logout-link-button {
+    background-color: #FFF7ED;
+    color: black;
+    border-radius: 10px;
+  }
 
 header {
   width: 100%;
@@ -66,6 +76,7 @@ header {
   align-items: center;
   padding-block: 10px;
 }
+
 
  
 header .site-logo {
@@ -82,9 +93,12 @@ header a {
   color: #FFFFFF;
   font-weight: 600;
   padding: 5px 20px;
+  display: inline-flex;
+  align-items: center;
 }
-  /* color: #161616; */
+
 header a:hover {
+    /* color: #161616; */
   color: #C4B29C;
   text-decoration: underline;
 } 
@@ -94,16 +108,6 @@ header a:active {
   text-decoration: underline;
 } 
 
-
-header .login-icon {
-  height: 18px;
-  width: 18px;
-}
-
-header .login-link {
-  display: inline-flex;
-  align-items: center;
-}
 
 nav {
   display: flex;
@@ -124,9 +128,10 @@ footer {
   margin-top: auto;
   font-weight: 500;
 }
-
+ /* work on this*/
 .link-button {
   display: inline-block;
+  background-color: #EA8A8A;
   text-align: center;
   text-decoration: none;
   border: none;
@@ -648,6 +653,34 @@ background-color: #beae9d;
   margin-block: 0;
 }
 
+/* Favorites List */
+.favorites-link-wrapper {
+  color: unset;
+  text-decoration: unset;
+}
+
+.favorites-single-layout-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+  border-radius: 5px;
+}
+
+
+.favorites-single {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.favorites-single-img {
+  width: 300px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+
 
 /* Not Found Page*/
 
@@ -661,6 +694,10 @@ background-color: #beae9d;
   color: white;
 }
 
+.favorites-single {
+  display: flex;
+  align-items: center;
+}
 
 /* Login */
 .login-container {

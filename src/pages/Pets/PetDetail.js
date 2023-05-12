@@ -95,7 +95,7 @@ function PetDetail() {
            )}
        </div> 
        {/* Render the Favorites component and pass 'animal' as a prop */}
-      <Favorites animal={animal} />
+      {/* <Favorites animal={animal} /> */}
       </>
  );
 }

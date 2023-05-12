@@ -5,15 +5,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-//import { AuthProvider } from "./Auth/AuthContext";
+import { AuthProvider } from "./Auth/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <App />
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </BrowserRouter>  
   </React.StrictMode>
 );
