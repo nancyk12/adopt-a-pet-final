@@ -36,7 +36,7 @@ function BlogForm(props) {
 		setTitleInput("");
 		setTextInput("");
 		setAuthorInput("");
-		navigate("/");
+		navigate("/blogs");
 		//props.setBlogsProps([...props.blogsProps, newBlog])
 		//function getInfo(callback){}
 		//getInfo(handleOnSubmit)

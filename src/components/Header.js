@@ -39,7 +39,7 @@ function Header() {
     return (
     <>
      <header>
-      <Link className="site-logo" to="/">#Adopt-A-Pet</Link>
+      <Link className="site-logo" to="/"><img scr="images/paw-logo.png"/>#Adopt-A-Pet</Link>
      
         <nav>
             <Link to="/">Home</Link>

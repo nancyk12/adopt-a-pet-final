@@ -2,16 +2,13 @@ import React from "react";
 import { Link, useParams } from "react-router-dom"
 import {useEffect} from "react";
 import { Client } from "@petfinder/petfinder-js";
-import Favorites from "./Favorites"; // Import the Favorites component
+//import Favorites from "./Favorites"; // Import the Favorites component
+import axios from "axios";
+import AddToFavoritesButton from "./AddToFavoritesButton";
 
-function PetDetail() {
-
-
+function PetDetail({ pet }) {
     const params = useParams()
-    
     const [animal, setAnimal] = React.useState(null)
-
-    // const heartIcon = <i className="ri-heart-line favorite"></i>
 
     useEffect(() => {
         const client = new Client({
@@ -21,14 +18,20 @@ function PetDetail() {
         client.animal.show(params.id).then((resp) => {
           setAnimal(resp.data.animal)
        }); //setAnimal(data.animals))
-    }, [params.id])
+    }, [params.id]);
 
-    // const activeStyles = {
-    //   fontWeight: "bold",
-    //   textDecoration: "underline",
-    //   color: "#161616"
-
-    // }
+    const addToFavorites = () => {
+      axios
+        .post('http://localhost:5005/favorites', {
+          animal: animal,
+        })
+        .then((response) => {
+          console.log('Pet added to favorites:', response.data);
+        })
+        .catch((error) => {
+          console.error('Error adding pet to favorites:', error);
+        });
+    };
 
     return (
       <>
@@ -62,14 +65,6 @@ function PetDetail() {
                       <li className="list-group-item"><b>Location: </b>{animal.contact.address.city}, {animal.contact.address.state}</li>
                     </ul>  
 
-                   {/* <p className="animal-age"><span><b>Age: </b> {animal.age}</span></p>
-
-                   
-                   <p className="animal-age"><span><b>Gender: </b>{animal.gender}</span></p>
-                   <p className="animal-age"><span><b>Primary Breed: </b>{animal.breeds.primary}</span></p>
-              
-                   <p><b>Location: </b>{animal.contact.address.city}, {animal.contact.address.state}</p>
-                    */}
                    <h4><b>{animal.name}'s Description</b></h4>  
                    <p>{animal.description}</p>
 
@@ -81,21 +76,22 @@ function PetDetail() {
                       <li className="list-group-item"><b>Spayed/Neutered: </b>{animal.attributes.spayed_neutered ? 'Yes' : 'No'}</li>
                       <li className="list-group-item"><b>Special Needs: </b>{animal.attributes.special_needs ? 'Yes' : 'No'}</li>
                     </ul>  
-                    {/* <div>{heartIcon}</div> */}
-
-                   <button className="link-button">Adopt {animal.name}</button><br/>
+                    
+                   <div>
+                     <a href={animal.url}>
+                      <button className="link-button">Adopt {animal.name}</button>
+                     </a>
+                    </div> 
                    <br/>
-                   {/* <button className="link-button">Add {animal.name} to favorites</button><br/>
-                   <br/> */}
+                   
                    <Link to={`/favorites?animalId=${animal.id}`}>
-                     <button className="link-button">Add {animal.name} to favorites</button>
+                     <button className="link-button" onClick={addToFavorites}>Add {animal.name} to favorites</button>
                    </Link>     
                </div>
            ) : (<h2>Loading...</h2>
            )}
        </div> 
-       {/* Render the Favorites component and pass 'animal' as a prop */}
-      {/* <Favorites animal={animal} /> */}
+      
       </>
  );
 }

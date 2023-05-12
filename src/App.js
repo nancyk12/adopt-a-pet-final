@@ -18,10 +18,7 @@ import Error from "./components/Error";
 import Blogs from "./components/blog/Blogs";
 import BlogForm from "./components/blog/BlogForm";
 import EditBlog from "./components/blog/EditBlog";
-//import AuthRequired from "./components/AuthRequired";
 
-//import Login from "./pages/Login";
-//import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import PrivatePage from "./pages/PrivatePage";
@@ -114,9 +111,7 @@ function App() {
           <Route path="/login" element={<Login />}/>  
         </Route>
 
-       {/* <Route element={<AuthRequired />}>
-         <Route path="protected" element={<h1>Super secret info here</h1>} />
-       </Route> */}
+      
     </Routes>
    </> 
 	)		

@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Client } from "@petfinder/petfinder-js";
+import axios from "axios";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
   const [favoritePets, setFavoritePets] = useState([]);
   const location = useLocation();
+  const url = "http://localhost:5005";
 
   useEffect(() => {
     // Parse the query parameter from the location object
@@ -42,15 +44,15 @@ function Favorites() {
     // Remove the favorite pet from the list
     setFavorites((prevFavorites) => prevFavorites.filter((id) => id !== animalId));
     setFavoritePets((prevFavoritePets) => prevFavoritePets.filter((pet) => pet.id !== animalId));
-  };
+  }
 
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1 className="favorites-h1">Favorites</h1>
       {favoritePets.length > 0 ? (
-        <ul className="blog-list">
+        <div className="blog-list">
           {favoritePets.map((pet) => (
-            <li key={pet.id}>
+            <div key={pet.id}>
               <section>	
 		<div div className="favorites-single-layout-container">
 		  <div className="favorites-single"> 
@@ -79,21 +81,10 @@ function Favorites() {
 		  </div>		
 		</div>
 	  </section>
-              {/* <div>
-                <img src={pet.primary_photo_cropped?.full} alt={pet.name} />
-              </div>
-              <div>
-                <h3>{pet.name}</h3>
-                <p><b>Age: </b>{pet.age}</p>
-                <p><b>Breeds: </b>{pet.breeds.primary}</p>
-                <p><b>Gender: </b>{pet.gender}</p>
-                <p>
-                  <b>Location: </b>{pet.contact.address.city}, {pet.contact.address.state}
-                </p>
-              </div> */}
-            </li>
+              
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No favorites selected.</p>
       )}

@@ -8,20 +8,32 @@ colors{
 --e-global-color-text: #685454;
 }
 
-.App {
-  
-  width: 100%;
-  padding: 4rem;
-} 
-
 html, body {
-  /* width: 100%; */
-  margin: 0;
-  padding: 0;
+  width: 100%;
   /* background-color: #FFFFFF; */
   background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+  display: flex;
 }
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.App {
+  flex-grow: 1;
+  width: 100%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+} 
+
+
 
 a {
   text-decoration: unset;
@@ -33,11 +45,20 @@ display: none;
 }
 
 body {
+  width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .site-wrapper {
+  flex-grow: 1;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -45,14 +66,19 @@ body {
 }
 
 main {
+  
+  width: 100hv;
+  margin-bottom: 84px;
+}
+main {
   width: 100%;
 }
 
-/* .small {
+.small {
   width: 100px;
   height: 100px;
   margin: 10px auto 0 auto;
-  } */
+  }
 
 
   .link-button {
@@ -68,7 +94,7 @@ main {
   }
 
 header {
-  width: 100%;
+  width: 100hv;
   background-color:#685454;
   color: #FFFFFF;
   height: 110px;
@@ -110,12 +136,16 @@ header a:active {
 
 
 nav {
-  display: flex;
+  
+  width: 100%;
+ 
+  align-items: right;
+  /* display: flex;  */
+  /*align-items: right; */
+  
 }
 
-main {
-  margin-bottom: 84px;
-}
+
 
 footer {
   background-color:#685454;
@@ -151,6 +181,7 @@ footer {
 
 /*** HOME PAGE ***/
 .home-container {
+  width: 100hv;
   width: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../public/images/pet-hero.png") no-repeat center center;
   -webkit-background-size: cover;
@@ -196,7 +227,8 @@ footer {
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
-  max-width: 100%;
+  width: 100hv;
+
 }
 
 .about-page-content {
@@ -592,6 +624,7 @@ background-color: #beae9d;
 }
 
 .blog-title {
+  margin-top: 54px;
   padding-inline: 26px;
 }
 
@@ -654,6 +687,11 @@ background-color: #beae9d;
 }
 
 /* Favorites List */
+.favorites-h1{
+  margin-top: 54px;
+  margin-left: 54px;
+}
+
 .favorites-link-wrapper {
   color: unset;
   text-decoration: unset;
@@ -705,6 +743,7 @@ background-color: #beae9d;
   flex-direction: column;
   align-items: center;
   padding-inline: 27px;
+  margin-top: 84px;
 }
 
 .login-form {
@@ -760,103 +799,4 @@ background-color: #beae9d;
   color: #cc0000;
 }
 
-
-/* Host NavBar */
-.host-nav {
-  display: flex;
-}
-
-.host-nav a {
-  text-decoration: none;
-  color: #4D4D4D;
-  font-weight: 500;
-  padding: 5px 20px;
-}
-
-.host-nav a:hover {
-  color: #161616;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-/*  Alt Pet Detail Layout*/
-.host-van-detail-layout-container {
-  background-color: white;
-  padding: 24px;
-  margin: 30px 26px;
-  display: flex;
-}
-
-.host-van-detail {
-  display: flex;
-  align-items: center;
-}
-
-.host-van-detail > img {
-  height: 160px;
-  border-radius: 5px;
-  margin-right: 20px;
-}
-
-.host-van-detail-info-text > h3 {
-  margin-top: 24px;
-  margin-bottom: 5px;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.host-van-detail-info-text > h4 {
-  font-size: 20px;
-  margin-block: 0;
-}
-
-.host-van-detail-nav {
-  display: flex;
-  margin-block: 25px;
-}
-
-.host-van-detail-nav a {
-  text-decoration: none;
-  color: #4D4D4D;
-  font-weight: 500;
-  padding: 5px 20px;
-}
-
-.host-van-detail-nav a:first-of-type {
-  text-decoration: none;
-  color: #4D4D4D;
-  font-weight: 500;
-  padding: 5px 15px;
-  margin-left: -15px;
-}
-
-.host-van-detail-nav a:hover {
-  color: #161616;
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-.host-van-detail-info > h4 {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
-}
-.host-van-detail-info > h4 > span {
-  font-weight: 500;
-}
-
-.host-van-price {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.host-van-price > span {
-  font-size: 16px;
-  color: #4D4D4D;
-}
-
-.host-van-detail-image {
-  height: 100px;
-  border-radius: 5px;
-}
 

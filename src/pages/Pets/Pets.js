@@ -7,7 +7,7 @@ import { Client } from "@petfinder/petfinder-js";
 
 
 function Pets() {
-    const [animals, setAnimals] = useState([]);
+  const [animals, setAnimals] = useState([]);
 	const [selected, setSelected] = useState("");
 	const [zipcode, setZipcode] = useState();
 	const [inputField, setInputField] = useState("");
@@ -101,9 +101,12 @@ function Pets() {
                         <span>{animal.age}  •  {animal.gender}  •  {animal.breeds.primary.substring(0, 25)}</span>
                        <br/>
                         <span>{animal.contact.address.city}, {animal.contact.address.state}</span>
+                        <br/>
+                        <br/>
+                        <i className={`pet-type ${animal.type} selected`}>{animal.type}</i>
                       </div>
                      <br/>
-                      <i className={`pet-type ${animal.type} selected`}>{animal.type}</i>
+                      {/* <i className={`pet-type ${animal.type} selected`}>{animal.type}</i> */}
 
                        </Link>
                        
